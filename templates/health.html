@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Health-analysis</title>
+    <link rel="stylesheet" href="./static/cs/style.css">
+    <!-- <link rel="stylesheet" href="style1.css"> -->
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" /> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" -->
+    <!-- integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous"> -->
+
+</head>
+
+<body>
+    <div class="hero">
+        <nav class="first_nav">
+            <img class="logo" src="{{ url_for('static', filename='images/Arogya.jpg') }}" alt="" srcset="" height="67px"
+                width="165px">
+            <ul class="nav_links">
+                <li><a href="{{ url_for('home') }}">Home</a></li>
+                <li><a href="#">About Us</a></li>
+                <li><a href="{{ url_for('health') }}">Health Analysis</a></li>
+                <!-- <li><a href="#">Nutrition Guide</a></li> -->
+            </ul>
+        </nav>
+    </div>
+    <div>
+        <nav class="sidebar">
+            <a href="#" class="title"><i class="fa-solid fa-rectangle-list"></i>Multiple Diseases <p>Prediction</p></a>
+
+            <div class="menu_content">
+                <ul class="menu_items">
+                    <li class="item" id="heart">
+                        <a href="#" onclick="showForm('form1'); return false;"><i
+                                class="fa-solid fa-heart-circle-plus"></i>Heart Disease Prediction</a>
+                    </li>
+                    <li class="item" id="diabetes">
+                        <a href="#" onclick="showForm('form2'); return false;"><i
+                                class="fa-solid fa-wave-square"></i>Diabetes Prediction</a>
+                    </li>
+                    <li class="item" id="dengue">
+                        <a href="#" onclick="showForm('form3'); return false;"><i class="fa-solid fa-disease"></i>Dengue
+                            Prediction</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <nav class="navbar">
+            <i class="fa-solid fa-bars" id="sidebar-close"></i>
+        </nav>
+        <div class="dashboard">
+            <div class="container">
+                <header>Multiple Diseases Prediction</header>
+
+                <form action="/predict" method="post">
+                    <input type="hidden" name="disease_type" id="disease_type">
+                    <div class="form" id="form1">
+                        <!-- <input type="hidden" name="disease_type" id="disease_type" value="heart"> -->
+                        <div class="details heart">
+                            <span class="title">Heart Disease Prediction</span>
+
+                            <div class="fields">
+                                <div class="input-field">
+                                    <label>Age</label>
+                                    <input type="number" name="age" id="" placeholder="Enter Your Age" step="any"
+                                        required>
+                                </div>
+                                <div class="input-field">
+                                    <label>Gender</label>
+                                    <input type="number" name="gender" id="" placeholder="1 for Male, 0 for Female "
+                                        required>
+                                </div>
+                                <div class="input-field">
+                                    <label>Chest Pain Type</label>
+                                    <input type="number" name="chest_pain" id="" placeholder="[4 values (0,1,2,3)]"
+                                        required>
+                                </div>
+                                <div class="input-field">
+                                    <label>Resting Blood Pressure</label>
+                                    <input type="number" name="resting_blood_pressure" id="" placeholder="in mm Hg"
+                                        required>
+                                </div>
+                                <div class="input-field">
+                                    <label>Serum Cholestoral</label>
+                                    <input type="number" name="serum_cholestoral" id="" placeholder="in mm/dl" required>
+                                </div>
+                                <div class="input-field">
+                                    <label>Fasting Blood Sugar > 120/dl</label>
+                                    <input type="number" name="fasting_blood_sugar" id="" placeholder="" required>
+                                </div>
+                                <div class="input-field">
+                                    <label>Resting Electrocardiographic Results</label>
+                                    <input type="number" name="resting_electrocardiographic" id=""
+                                        placeholder="Values(0,1,2)" required>
+                                </div>
+                                <div class="input-field">
+                                    <label>Maximum Heart rate Achieved</label>
+                                    <input type="number" name="max_heart_rate" id="" placeholder="" required>
+                                </div>
+                                <div class="input-field">
+                                    <label>Exercise induced Angina</label>
+                                    <input type="number" name="exercise_angina" id="" placeholder="1 for Yes, 0 for No"
+                                        required>
+                                </div>
+                                <div class="input-field">
+                                    <label>ST Depression Induced by Exercise</label>
+                                    <input type="number" name="st_depression" id="" placeholder="" step="any" required>
+                                </div>
+                                <div class="input-field">
+                                    <label>Slope of the Peak Exercise ST segment</label>
+                                    <input type="number" name="st_slope" id="" placeholder="" required>
+                                </div>
+                                <div class="input-field">
+                                    <label>Major Vessel colored by Flourosopy</label>
+                                    <input type="number" name="major_vessel" id="" placeholder="" required>
+                                </div>
+                                <div class="input-field">
+                                    <label>Thal:0=Normal; 1=Fixed Defect; 2=Reversable Defect </label>
+                                    <input type="number" name="thal" id="" placeholder="" required>
+                                </div>
+                            </div>
+
+                            <div class="button">
+                                <input type="submit" value="Submit">
+                            </div>
+                            {% if disease_type == 'heart' and result %}
+                            <div class="result-box">
+                                <p>{{ result }}</p>
+                            </div>
+                            {% endif %}
+                        </div>
+
+                    </div>
+
+                    <div class="form" id="form2">
+                        <div class="details diabetes">
+                            <span class="title">Diabetes Disease Prediction</span>
+
+                            <div class="fields">
+                                <div class="input-field">
+                                    <label>Age</label>
+                                    <input type="number" name="age1" id="" placeholder="Enter Your Age" required>
+                                </div>
+                                <div class="input-field">
+                                    <label>Gender</label>
+                                    <input type="number" name="gender1" id="" placeholder="1 for Male, 0 for Female "
+                                        required>
+                                </div>
+                                <div class="input-field">
+                                    <label>BMI(Body Mass Index)</label>
+                                    <input type="number" name="bmi" id="" placeholder="Enter Your BMI" required>
+                                </div>
+                                <div class="input-field">
+                                    <label>Blood Pressure</label>
+                                    <input type="number" name="blood_pressure" id=""
+                                        placeholder="0 for Low, 1 for Normal, 2 for High" required>
+                                </div>
+                                <div class="input-field">
+                                    <label>FBS(Fasting Blood Sugar)</label>
+                                    <input type="number" name="fbs" id="" placeholder="Enter Your FBS" required>
+                                </div>
+                                <div class="input-field">
+                                    <label>hemoglobin A1c or glycated hemoglobin(HbA1c)</label>
+                                    <input type="number" name="hba1c" id="" placeholder="Enter your HbA1c" step="any"
+                                        required>
+                                </div>
+                                <div class="input-field">
+                                    <label>Family History of Diabetes</label>
+                                    <input type="number" name="family_history" id="" placeholder="0 for No, 1 for Yes"
+                                        required>
+                                </div>
+                                <div class="input-field">
+                                    <label>Smoking</label>
+                                    <input type="number" name="smoking" id="" placeholder="0 for No, 1 for Yes"
+                                        required>
+                                </div>
+                                <div class="input-field">
+                                    <label>Diet</label>
+                                    <input type="number" name="diet" id="" placeholder="1 for Healthy, 0 for Poor"
+                                        required>
+                                </div>
+                                <div class="input-field">
+                                    <label>Exercise</label>
+                                    <input type="number" name="exercise" id="" placeholder="1 for Regular, 0 for No"
+                                        required>
+                                </div>
+                            </div>
+
+                            <div class="button">
+                                <input type="submit" value="Submit">
+                            </div>
+                            {% if disease_type == 'diabetes' and result %}
+                            <div class="result-box">
+                                <p>{{ result }}</p>
+                            </div>
+                            {% endif %}
+                        </div>
+
+                    </div>
+
+                    <div class="form" id="form3">
+                        <div class="details dengue">
+                            <span class="title">Dengue Disease Prediction</span>
+
+                            <div class="fields">
+                                <div class="input-field">
+                                    <label>Fever</label>
+                                    <input type="number" name="fever" id="" placeholder="1 for Yes, 0 for No" required>
+                                </div>
+                                <div class="input-field">
+                                    <label>Headache</label>
+                                    <input type="number" name="headache" id="" placeholder="1 for Yes, 0 for No"
+                                        required>
+                                </div>
+                                <div class="input-field">
+                                    <label>Muscle_Pain</label>
+                                    <input type="number" name="muscle_pain" id="" placeholder="1 for Yes, 0 for No"
+                                        required>
+                                </div>
+                                <div class="input-field">
+                                    <label>Vomiting</label>
+                                    <input type="number" name="vomiting" id="" placeholder="1 for Yes, 0 for No"
+                                        required>
+                                </div>
+                                <div class="input-field">
+                                    <label>Skin_Rash</label>
+                                    <input type="number" name="skin_rash" id="" placeholder="1 for Yes, 0 for No"
+                                        required>
+                                </div>
+                                <div class="input-field">
+                                    <label>Bleeding</label>
+                                    <input type="number" name="bleeding" id="" placeholder="1 for Yes, 0 for No"
+                                        required>
+                                </div>
+                                <div class="input-field">
+                                    <label>Low_Platelet_Count</label>
+                                    <input type="number" name="low_platelet_count" id=""
+                                        placeholder="1 for Yes, 0 for No" required>
+                                </div>
+                                <div class="input-field">
+                                    <label>Joint_Pain</label>
+                                    <input type="number" name="joint_pain" id="" placeholder="1 for Yes, 0 for No"
+                                        required>
+                                </div>
+                            </div>
+                            <div class="button">
+                                <input type="submit" value="Submit">
+                            </div>
+                            {% if disease_type == 'dengue' and result %}
+                            <div class="result-box">
+                                <p>{{ result }}</p>
+                            </div>
+                            {% endif %}
+                        </div>
+
+                    </div>
+
+                    <!-- {% if result %}
+                    <div class="result-box">
+                        <p>{{ result }}</p>
+                    </div>
+                    {% endif %} -->
+                </form>
+
+
+            </div>
+
+        </div>
+        <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+        <script>
+            const diseaseTypeFromFlask = "{{ disease_type | safe }}";
+            if (diseaseTypeFromFlask) {
+                if (diseaseTypeFromFlask === 'heart') showForm('form1');
+                else if (diseaseTypeFromFlask === 'diabetes') showForm('form2');
+                else if (diseaseTypeFromFlask === 'dengue') showForm('form3');
+            }
+            else {
+                showForm('form1');  // Show heart form by default
+            }
+        </script>
+
+
+    </div>
+</body>
+
+</html>
