@@ -81,6 +81,34 @@ def predict():
 
     # Render the same page with the prediction result
     return render_template('health.html', result=result_message, disease_type=disease_type)
+@app.route('/nutrition')
+def nutrition():
+    return render_template('nutrition.html')
+
+@app.route('/diet-chart', methods=['POST'])
+def diet_chart():
+    data = {
+        'gender': request.form['gender'],
+        'height': int(request.form['height']),
+        'weight': int(request.form['weight']),
+        'age': int(request.form['age']),
+        'diet': request.form['diet'],
+        'goal': request.form['goal']
+    }
+
+    # Basic logic (can be replaced by ML model or DB)
+    if data['goal'] == 'Gain Weight' and data['diet'] == 'Non-Veg':
+        meals = ["Fish (like salmon, mackerel, sardines)","Chicken thighs / drumsticks ","Eggs and Prawns / Shrimp ","Red meat (mutton)","Banana Shake", "Paneer Sandwich", "Rice & Dal", "Nuts"]
+    elif data['goal'] == 'Gain Weight' and data['diet'] == 'Veg':
+        meals = ["Paneer Tikka", "Chickpea Salad", "Vegetable Biryani", "Peanut Butter Toast", "Banana Shake", "Oats with Milk", "Rice & Dal", "Nuts"]
+    elif data['goal'] == 'Lose Weight' and data['diet'] == 'Non-Veg':
+        meals = ["Oats", "Boiled Eggs", "Salad", "Skinless chicken breast (grilled/boiled)","Eggs (boiled or poached)","Grilled Tofu"]
+    elif data['goal'] == 'Lose Weight' and data['diet'] == 'Veg':
+        meals = ["Oats", "Salad", "Grilled Tofu"," Greek yogurt", "lentils", "beans", "chickpeas", "sprouts", "quinoa"]
+    else:
+        meals = ["Roti & Sabzi", "Curd Rice", "Fruit Bowl"]
+
+    return render_template("diet-chart.html", data=data, meals=meals)
 
 
 if __name__ == '__main__':

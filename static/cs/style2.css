@@ -1,0 +1,117 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Montserrat", serif;
+    background: url("/static/images/nutrition_img.jpg") no-repeat center center fixed;
+    background-size: cover;
+    animation: backgroundMove 10s infinite alternate ease-in-out;
+  }
+    @keyframes backgroundMove {
+    0% {
+        background-position: center top;
+    }100% {
+        background-position: center bottom;
+    }
+  } 
+  nav {
+    background: rgba(194, 213, 208); /* #00be59; */
+    /* padding: 15px 20px; */
+    display:  flex;
+    justify-content: center;
+    align-items: center;
+    /* color: rgb(255, 255, 255); */
+     padding-left: 10%;
+    padding-right: 10%;
+    /* background: rgb(191 199 224); */
+    /* box-shadow: 5px 5px 15px 5px #88888896; */
+    filter: drop-shadow(10px 10px 10px #88888896);
+    outline: 2px solid #5fa989;
+}
+
+.hero{
+    position: sticky;
+    top: 0;
+    z-index: 100;
+ }
+.logo{
+    position: relative;
+    right: 25vw;
+    mix-blend-mode: multiply;
+}
+#acc{
+    position: relative;
+    left: 90px;
+}
+nav ul li{
+    list-style-type: none;
+    display: inline-block;
+    padding: 10px 20px;
+    
+}
+
+.nav_links li a{
+    text-decoration: none;
+    color:rgba(10, 100, 67, 0.934);
+    /* transition: all 0.3s ease 0s; */
+    font-weight: bold;
+    position: relative;
+    padding: 5px 0;
+    transition: color 0.3s ease;
+}
+.nav_links a:hover{
+    color: #83c9ab;   
+    
+}  
+.nav_links a::after{
+    content:'';
+    position:absolute;
+    width: 0;
+    height: 2px;
+    background: #83c9ab;
+    bottom: 0;
+    left: 50%;
+    transition: all 0.3s ease;
+}
+.nav_links a:hover::after{
+    width: 100%;
+    left: 0;
+}
+
+
+
+  .form-container {
+    width: 400px;
+    margin: 50px auto;
+    background: rgba(235, 255, 245, 0.8);
+    padding: 30px;
+    border-radius: 10px;
+  }
+  
+  form h2 {
+    text-align: center;
+    font-weight: bold;
+  }
+  
+  form input, form select, form button {
+    width: 100%;
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+  }
+  
+  form button {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    font-weight: bold;
+  }
+   
+/* Background */
+/* body {
+    background: url('background.jpg') no-repeat center center fixed;
+    background-size: cover;
+    margin: 0;
+    font-family: Arial, sans-serif;
+}

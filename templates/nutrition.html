@@ -1,0 +1,146 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Arogya Health Form</title>
+  <link rel="stylesheet" href="/static/style.css" />
+</head>
+<body>
+  <nav>
+    <ul>
+      <li>Home</li>
+      <li>About Us</li>
+      <li>Health Analysis</li>
+      <li>Nutrition Guide</li>
+      <li>Account</li>
+    </ul>
+  </nav>
+
+  <div class="form-container">
+    <form action="/diet-chart" method="POST">
+      <h2>I am (biologically) a</h2>
+      <select name="gender" required>
+        <option value="Man">Man</option>
+        <option value="Woman">Woman</option>
+      </select>
+
+      <input type="number" name="height" placeholder="My Height (cm)" required>
+      <input type="number" name="weight" placeholder="My Weight (kg)" required>
+      <input type="number" name="age" placeholder="My Age" required>
+
+      <select name="diet" required>
+        <option value="Veg">Veg</option>
+        <option value="Non-Veg">Non-Veg</option>
+      </select>
+
+      <select name="goal" required>
+        <option value="Gain Weight">Gain Weight</option>
+        <option value="Lose Weight">Lose Weight</option>
+        <option value="Maintain Weight">Maintain Weight</option>
+      </select>
+
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+</body>
+</html> -->
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Health Form</title>
+  <!-- <script src="https://cdn.tailwindcss.com"></script> -->
+  <link rel="stylesheet" href="/static/cs/style2.css">
+  <!-- <style>
+        body {
+            background: url('WhatsApp Image 2025-03-27 at 17.00.55_f484c841.jpg') no-repeat center center fixed;
+            background-size: cover;
+            animation: backgroundMove 10s infinite alternate ease-in-out;
+        }
+        
+        @keyframes backgroundMove {
+            0% {
+                background-position: center top;
+            }
+            100% {
+                background-position: center bottom;
+            }
+        }
+
+        
+    </style> -->
+</head>
+
+
+<body>
+  <!-- <nav class="navbar">
+    <img src="/static/images/logo.jpg" alt="Logo" class="logo" height="67px"width="165px">
+    <div class="nav-links">
+      <a href="#">Home</a>
+      <a href="#">About Us</a>
+      <a href="#">Health Analysis</a>
+      <a href="#">Nutrition Guide</a>
+    </div>
+  </nav> -->
+   <div class="hero">
+        <nav>
+            <img class="logo" src="/static/images/Arogya.jpg" alt="" srcset="" height="67px" width="165px">
+            <ul class="nav_links">
+                <li><a href="{{ url_for('home') }}">Home</a></li>
+                <li><a href="#">About Us</a></li>
+                <li><a href="{{ url_for('health') }}">Health Analysis</a></li>
+                <li><a href="{{ url_for('nutrition') }}">Nutrition Guide</a></li>
+            </ul>
+            <!-- <button type="button" id="acc">Account</button> -->
+        </nav>
+    </div>
+
+
+
+  <div class="flex justify-center items-center min-h-screen">
+
+    <div class="form-container">
+      <form action="/diet-chart" method="POST">
+        <h2>I am (biologically) a</h2>
+        <select name="gender" required>
+          <option value="Man">Man</option>
+          <option value="Woman">Woman</option>
+        </select>
+
+        <input type="number" name="height" placeholder="My Height (cm)" required>
+        <input type="number" name="weight" placeholder="My Weight (kg)" required>
+        <input type="number" name="age" placeholder="My Age" required>
+
+        <select name="diet" required>
+          <option value="Veg">Veg</option>
+          <option value="Non-Veg">Non-Veg</option>
+        </select>
+
+        <select name="goal" required>
+          <option value="Gain Weight">Gain Weight</option>
+          <option value="Lose Weight">Lose Weight</option>
+          <option value="Maintain Weight">Maintain Weight</option>
+        </select>
+
+        <button type="submit">Submit</button>
+      </form>
+      <!-- <div id="account-section" class="hidden overlay">
+        <div class="account-container">
+            <h2>Account</h2>
+            <button class="action-btn bg-blue-600" onclick="showLogin()">Log In</button>
+            <button class="action-btn bg-green-600" onclick="showSignup()">Sign Up</button>
+            <button class="action-btn bg-gray-600" onclick="toggleAccountSection()">Back</button>
+            <button class="close-btn" onclick="toggleAccountSection()">&times;</button>
+        </div>
+    </div> -->
+
+      <!-- <script src="script.js"></script> -->
+</body>
+
+</html>

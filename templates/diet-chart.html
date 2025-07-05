@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Your Diet Chart</title>
+  <link rel="stylesheet" href="/static/cs/style2.css" />
+</head>
+<body>
+  <div class="form-container">
+    <h2>Hello {{ data.gender }}, here's your suggested diet:</h2>
+    <p>Height: {{ data.height }} cm | Weight: {{ data.weight }} kg | Age: {{ data.age }}</p>
+    <p>Diet: {{ data.diet }} | Goal: {{ data.goal }}</p>
+
+    <h3>Recommended Meals:</h3>
+    <ul>
+      {% for item in meals %}
+        <li>{{ item }}</li>
+      {% endfor %}
+    </ul>
+  </div>
+</body>
+</html>
