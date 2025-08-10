@@ -36,11 +36,11 @@
 
 - Aims to guide users toward healthier food choices.
 
-## 3.User-Friendly Web Interface
+### 3.User-Friendly Web Interface
 
 - Simple, intuitive, and mobile-friendly design for easy usage.
 
-## 4.Backend Integration
+### 4.Backend Integration
 
 - Flask API connects the trained ML model to the frontend, enabling real-time prediction.
   
