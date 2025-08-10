@@ -44,7 +44,7 @@
 
 - Flask API connects the trained ML model to the frontend, enabling real-time prediction.
 
-## 🚀Project-Structure
+## 📂Project-Structure
 ```
 Multiple-Disease-Prediction-with-Smart-Diet-Chart/
 ├── static/           # Frontend static files
