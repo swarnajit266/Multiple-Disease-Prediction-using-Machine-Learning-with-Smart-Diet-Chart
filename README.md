@@ -47,28 +47,28 @@
 ## 🚀Project-Structure
 ```
 Multiple-Disease-Prediction-with-Smart-Diet-Chart/
-├── static/ # Frontend static files
-│ ├── cs/ # Stylesheets
+├── static/           # Frontend static files
+│ ├── cs/             # Stylesheets
 │ │ └── style.css
 | | └── style1.css
 | | └── style2.css 
-│ ├── js/ #JavaScript scripts
+│ ├── js/             #JavaScript scripts
 │ │ └── script.js
-│ └── images/ # Project images/icons
+│ └── images/         # Project images/icons
 │
-├── templates/ # HTML templates
-│ ├── home.html # Home page
-│ ├── health.html # Disease prediction page
-│ ├── nutrition.html # Input page of Diet-chart
-│ ├── diet-chart.html # Output page of Diet-chart
+├── templates/                 # HTML templates
+│ ├── home.html                     # Home page
+│ ├── health.html                   # Disease prediction page
+│ ├── nutrition.html                # Input page of Diet-chart
+│ ├── diet-chart.html               # Output page of Diet-chart
 |
 ├── app.py # Main Flask application
 │
-├── model1.pkl # For predict Heart-disease
-├── model2.pkl # For predict Diabetes
-├── model3.pkl # For predict Dengue
+├── model1.pkl      # For predict Heart-disease
+├── model2.pkl      # For predict Diabetes
+├── model3.pkl      # For predict Dengue
 |
-├── README.md #  Project documentation
+├── README.md       # Project documentation
 ```
 ## 📂 Workflow
 **User Input** → The user enters health-related data through the web form.
