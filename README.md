@@ -51,5 +51,5 @@
 
 **Prediction** → ML model (Scikit-learn) predicts the probability of a disease.
 
-**Diet Chart Generation** → Based on results, a suitable diet plan is displayed.
+**Diet Chart Generation** → Based on user input, a suitable diet plan is displayed.
 
