@@ -48,7 +48,7 @@
 ```
 Multiple-Disease-Prediction-with-Smart-Diet-Chart/
 ├── static/ # Frontend static files
-│ ├── cs/ #Stylesheets
+│ ├── cs/ # Stylesheets
 │ │ └── style.css
 | | └── style1.css
 | | └── style2.css 
